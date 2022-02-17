@@ -1,0 +1,51 @@
+<div class="form-group">
+    <br>
+    <form>
+        <div class="form-group col-md-3">
+            <label for="file">Elija un Archivo .txt  </label>
+            <br>
+             <input type="file"
+                    id="file"
+                    (change)="handleFileInput($event.target.files)"
+                    accept=".txt"
+             >
+
+     <p>La Longitud del texto es: {{value}}</p> 
+        </div>
+    </form>
+    
+</div>
+<br>
+<hr>
+<div class=" col-md-3">
+    <label for="text">Texto Input </label>
+    <input #sendText class="form-control" placeholder="Ingrese Texto" required>
+    <p>La Longitud del texto es: {{valueInput}}</p> 
+</div>
+<button type="input" class="btn btn-info" (click)="sendTextPost(sendText.value)" >Enviar Texto</button>
+<br>
+<br>   
+<hr>
+<br>
+<br> 
+<div class="table-responsive col-md-12">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id #</th>
+                <th>Texto</th>
+                <th>Longitud</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let text of values">
+                <td> {{text.id}}</td>
+                <td> {{text.textValue}}</td>
+                <td> {{text.textLenght}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+    

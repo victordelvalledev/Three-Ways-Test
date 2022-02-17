@@ -3,12 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { HttpClientModule} from '@angular/common/http';
+
+import { UploadFileComponent } from './upload-file/upload-file.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadFileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
